@@ -79,9 +79,9 @@ app.get('/books',(req,res)=>{
         let title = req.query.title;
         let fname = req.query.author;
         let lname = req.query.author;
-        var limit = (req.query.limit*1);
-        if (limit == 0) {
-            limit = 10;
+        var limit = (req.query.limit*1); //convert to number
+        if (limit == 0) {               //if limit is not specified
+            limit = 10;                 //default limit to 10
         }
         let qparams = [lname,fname,title,limit]; //ordering of parameters need to follow SQL statement ordering exactly
 
@@ -89,7 +89,7 @@ app.get('/books',(req,res)=>{
         findBooks(qparams).then((results)=>{
             console.log(results);
             res.json(results);
-        }).catch((error)=>{
+        }).catch((error)=>{ 
             console.log(error);
             res.status(500).json(error);
         });
