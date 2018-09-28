@@ -1,4 +1,4 @@
-## Introduction to  Books DB🔎
+## Introduction to  Books DB
 Node Express App is in github.com/wesiang/booksDBsvc
 Angular front end is in github.com/wesiang/bookclient
 
